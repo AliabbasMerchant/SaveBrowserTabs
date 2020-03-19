@@ -1,3 +1,30 @@
-<h3>URLs of tabs in this window are:</h3>
-<textarea id="urlsTextArea"></textarea>
-<script src="popup.js"></script>
+<html>
+
+<head>
+</head>
+<style>
+    html,
+    body {
+        height: fit-content;
+    }
+
+    textarea {
+        white-space: pre;
+    }
+</style>
+
+<body>
+    <div id="currentURLsDiv">
+        <h3>URLs of tabs in the current window are:</h3>
+        <textarea id="currentURLsTextArea" rows="10" cols="100"></textarea>
+    </div>
+    <hr />
+    <div id="loadURLsDiv">
+        <h3>Enter URLs of tabs to open:</h3>
+        <textarea id="newURLsTextArea" rows="10" cols="100"></textarea>
+        <button id="openURLsButton">Open URLs in tabs</button>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>

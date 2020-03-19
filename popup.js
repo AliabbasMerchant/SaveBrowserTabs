@@ -1,11 +1,20 @@
+var currentURLsTextArea = document.getElementById("currentURLsTextArea");
+var newURLsTextArea = document.getElementById("newURLsTextArea");
+var openURLsButton = document.getElementById("openURLsButton");
+
 chrome.tabs.query({ currentWindow: true }, function (tabs) {
-    urls = ""
+    var urls = ""
     tabs.forEach(tab => {
         urls += tab.url + "\n";
     });
     urls = urls.trim();
-    var urlsTextArea = document.getElementById("urlsTextArea");
-    urlsTextArea.value = urls;
-    urlsTextArea.cols = 100;
-    urlsTextArea.rows = tabs.length < 50 ? tabs.length : 50;
+    currentURLsTextArea.value = urls;
 });
+
+openURLsButton.onclick = function() {
+    var urls = newURLsTextArea.value;
+    urls = urls.split("\n");
+    urls.forEach(url => {
+        chrome.tabs.create({ url });
+    })
+}
