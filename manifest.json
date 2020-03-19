@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+    "name": "Save Broswer Tabs",
+    "version": "1.0",
+    "description": "Save the tabs in your window into a file, and then reopen them whenever needed!",
+    "icons": {
+        "512": "icon512.png"
+    },
+    "permissions": [
+        "activeTab",
+        "tabs"
+    ],
+    "browser_action": {
+        "default_title": "Save Browser Tabs",
+        "default_popup": "popup.html"
+    }
+}
